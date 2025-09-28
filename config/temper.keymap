@@ -15,10 +15,106 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+        ae_macro: ae_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        ae_cap_macro: ae_cap_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        ue_macro: ue_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N2>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        ue_cap_macro: ue_cap_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        oe_macro: oe_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        oe_cap_macro: oe_cap_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_ae {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&ae_macro>;
+        };
+        combo_ae_cap {
+            timeout-ms = <50>;
+            key-positions = <10 11 16>;
+            bindings = <&ae_cap_macro>;
+        };
+        combo_ue {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&ae_macro>;
+        };
+        combo_ue_cap {
+            timeout-ms = <50>;
+            key-positions = <6 7 13>;
+            bindings = <&ae_cap_macro>;
+        };
+        combo_oe {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&ae_macro>;
+        };
+        combo_oe_cap {
+            timeout-ms = <50>;
+            key-positions = <8 9 13>;
+            bindings = <&ae_cap_macro>;
+        };
+        combo_sz {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&sz_macro>;
